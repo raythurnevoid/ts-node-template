@@ -4,8 +4,5 @@
 		"outDir": "./lib",
 		"sourceMap": false,
 		"declaration": true
-	},
-	"include": [
-		"src",
-	],
+	}
 }
