@@ -5,7 +5,6 @@
 		}
 	],
 	"settings": {
-		"typescript.tsdk": "node_modules\\typescript\\lib",
 		"workbench.colorCustomizations": {
 			"activityBar.activeBackground": "#fca400",
 			"activityBar.activeBorder": "#849e8e",
@@ -22,8 +21,12 @@
 			"titleBar.inactiveBackground": "#55556399",
 			"titleBar.inactiveForeground": "#e7e7e799"
 		},
+		"prettier.useTabs": true,
+		"prettier.singleQuote": false,
 		"editor.formatOnSave": true,
-		"prettier.useTabs": true
+		"editor.insertSpaces": false,
+		"typescript.tsdk": "node_modules\\typescript\\lib",
+		"typescript.preferences.importModuleSpecifier": "relative",
 	},
 	"launch": {
 		"version": "0.2.0",
