@@ -9,7 +9,7 @@
 		"start": "npm run ts-node src/index.ts",
 		"debug": "npm run ts-node:inspect src/index.ts",
 		"clean-lib": "del-cli lib",
-		"copy": "copyfiles ./src/**/*.* package.json tsconfig.json lib",
+		"copy": "copyfiles ./src/**/*.* package.json tsconfig.json tsconfig.lib.json lib",
 		"tsc": "tsc -p tsconfig.lib.json",
 		"lib": "npm-run-all clean-lib copy tsc",
 		"prepackage": "npm run lib",
@@ -24,6 +24,7 @@
 	},
 	"author": "Ray Thurne <raythurnevoid@gmail.com>",
 	"license": "ISC",
+	"main": "./index.js",
 	"dependencies": {
 		"dotenv": "^8.2.0",
 		"copyfiles": "^2.4.1",
