@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"target": "ES2020",
+		"module": "CommonJS",
+		"moduleResolution": "node",
+		"importsNotUsedAsValues": "error",
+		"isolatedModules": true,
+		"allowSyntheticDefaultImports": true,
+		"keyofStringsOnly": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"types": [
+			"node"
+		]
+	},
+	"include": [
+		"src",
+	],
+}
