@@ -1,6 +1,6 @@
 {
 	"name": "@raythurnevoid/ts-node-template",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Template for TS Node projects",
 	"scripts": {
 		"env": "cross-env TS_NODE_PROJECT=\"tsconfig.json\"",
@@ -26,14 +26,15 @@
 	"license": "ISC",
 	"main": "./index.js",
 	"dependencies": {
-		"dotenv": "^8.2.0",
+		"@raythurnevoid/node-colorful-log": "^0.1.1",
+		"@types/node": "^14.14.41",
 		"copyfiles": "^2.4.1",
-		"del-cli": "^3.0.1",
-		"npm-run-all": "^4.1.5",
 		"cross-env": "^7.0.3",
+		"del-cli": "^3.0.1",
+		"dotenv": "^8.2.0",
+		"npm-run-all": "^4.1.5",
 		"ts-node": "^9.1.1",
 		"tsconfig-paths": "^3.9.0",
-		"@types/node": "^14.14.41",
 		"typescript": "^4.2.4"
 	},
 	"devDependencies": {}
