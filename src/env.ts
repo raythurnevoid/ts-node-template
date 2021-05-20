@@ -1,9 +1,12 @@
 import { resolve } from "path";
 import { config } from "dotenv";
+import { Log } from "./log";
 
-readEnv();
+const log = new Log(module);
 
 export function env() {
+	readEnv();
+
 	return {
 		test: process.env.TEST,
 	};
@@ -11,7 +14,7 @@ export function env() {
 
 function readEnv() {
 	const envFilePath = resolve(process.cwd(), ".env");
-	console.info(".env file:", envFilePath);
+	log.info(".env file:", envFilePath);
 	config({
 		path: resolve(envFilePath),
 	});

@@ -1,5 +1,5 @@
 import { env } from "./env";
-import { Log } from "@raythurnevoid/node-colorful-log";
+import { Log } from "./log";
 
 const log = new Log("index.ts");
 
