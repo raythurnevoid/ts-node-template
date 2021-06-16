@@ -1,21 +1,20 @@
 {
 	"name": "@raythurnevoid/ts-node-template",
-	"version": "0.0.5",
+	"version": "0.1.0",
 	"description": "Template for TS Node projects",
 	"scripts": {
 		"clean-lib": "del-cli lib",
-		"copy": "copyfiles ./src/**/*.* package.json tsconfig.json tsconfig.lib.json lib",
+		"copy": "copyfiles src/**/*.* package.json tsconfig.json tsconfig.lib.json lib",
 		"tsc": "tsc -p tsconfig.lib.json",
 		"lib": "npm-run-all clean-lib copy tsc",
 		"prepackage": "npm run lib",
-		"package": "npm publish ./lib --",
+		"package": "npm publish ./lib --access public",
 		"env": "cross-env TS_NODE_PROJECT=\"tsconfig.json\"",
-		"ts-node": "npm run env -- node -r ts-node/register -r tsconfig-paths/register --loader ts-node/esm --experimental-specifier-resolution=node --",
+		"ts-node": "npm run env -- node -r ts-node/register -r tsconfig-paths/register --loader ts-node/esm --",
 		"ts-node:inspect": "npm run ts-node -- --inspect --",
-		"start:ts-node": "npm run ts-node src/index.ts",
-		"debug:ts-node": "npm run ts-node:inspect src/index.ts",
-		"start": "npm run tsc && node --experimental-specifier-resolution=node ./lib/index.js",
-		"debug": "npm run tsc && npm run start -- --inspect"
+		"start": "npm run ts-node src/index.ts",
+		"debug": "npm run ts-node:inspect src/index.ts",
+		"test": "jest"
 	},
 	"type": "module",
 	"browserslist": [
@@ -31,8 +30,7 @@
 	"author": "Ray Thurne <raythurnevoid@gmail.com>",
 	"license": "ISC",
 	"dependencies": {
-		"@raythurnevoid/node-colorful-log": "^0.1.3",
-		"@types/node": "^15.12.2",
+		"@raythurnevoid/node-colorful-log": "^0.2.5",
 		"copyfiles": "^2.4.1",
 		"cross-env": "^7.0.3",
 		"del-cli": "^4.0.0",
@@ -43,6 +41,7 @@
 		"typescript": "^4.3.2"
 	},
 	"devDependencies": {
+		"@types/node": "^15.12.2",
 		"browserslist": "^4.16.6"
 	}
 }

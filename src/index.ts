@@ -1,5 +1,5 @@
-import { env } from "./env";
-import { Log, setLogLevel } from "./log";
+import { env } from "./env.js";
+import { Log, setLogLevel } from "./log.js";
 
 const log = new Log(import.meta.url);
 

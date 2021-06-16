@@ -1,9 +1,9 @@
 import { resolve } from "path";
-import { Log } from "./log";
+import { Log } from "./log.js";
 import { config } from "dotenv";
-import type { Config } from "@raythurnevoid/node-colorful-log";
+import type { Config } from "@raythurnevoid/node-colorful-log/types.js";
 
-const log = new Log(import.meta.url);
+const xx = new Log(import.meta.url);
 let read: boolean = false;
 
 export function env(): Env {
@@ -17,7 +17,7 @@ export function env(): Env {
 function readEnv() {
 	if (!read) {
 		const envFilePath = resolve(process.cwd(), ".env");
-		log.i(".env file:", envFilePath);
+		xx.i(".env file:", envFilePath);
 		config({
 			path: resolve(envFilePath),
 		});

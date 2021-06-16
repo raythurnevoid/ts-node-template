@@ -4,5 +4,8 @@
 		"outDir": "./lib",
 		"sourceMap": false,
 		"declaration": true
-	}
+	},
+	"exclude": [
+		"**/*.test.ts"
+	]
 }
