@@ -27,7 +27,7 @@
 			{
 				"type": "node",
 				"request": "launch",
-				"name": "Launch dws-aem-credentials-store",
+				"name": "Launch ts-node-template",
 				"cwd": "${workspaceFolder}",
 				"runtimeArgs": [
 					"--inspect",
