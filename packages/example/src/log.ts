@@ -1,8 +1,8 @@
 import {
 	buildLogger,
 	defaultConfig,
-} from "@raythurnevoid/node-colorful-log/node.js";
-import type { Config } from "@raythurnevoid/node-colorful-log/types.js";
+} from "@raythurnevoid/node-colorful-log/node";
+import type { Config } from "@raythurnevoid/node-colorful-log/types";
 
 const config: Config = {
 	...defaultConfig,
