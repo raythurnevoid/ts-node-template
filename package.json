@@ -1,6 +1,6 @@
 {
 	"name": "@raythurnevoid/ts-node-template",
-	"version": "1.0.0-beta",
+	"version": "1.0.0",
 	"description": "Template for TS Node projects",
 	"scripts": {
 		"env": "cross-env TS_NODE_PROJECT=\"tsconfig.json\"",
