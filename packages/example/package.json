@@ -14,11 +14,11 @@
 		"build-lib": "npm-run-all --parallel copy:package copy:package:cjs copy copy:cjs copy tsc tsc:cjs",
 		"lib": "npm run clean-lib && npm run build-lib",
 		"dev": "npm run clean-lib && nodemon --watch src -e * --exec \"npm run build-lib && node \" ./lib/index.js",
-		"ts-node": "npm run env -- node -r ts-node/register -r tsconfig-paths/register --loader ts-node/esm --",
+		"ts-node": "npm run env -- node --require ts-node/register --require tsconfig-paths/register --loader ts-node/esm --",
 		"ts-node:inspect": "npm run ts-node -- --inspect --",
 		"start": "npm run ts-node src/index.ts",
 		"debug": "npm run ts-node:inspect src/index.ts",
-		"test": "jest",
+		"test": "npm run ts-node --test ./src/log.test.ts",
 		"package": "npm run lib && npm publish ./lib --access public --"
 	},
 	"type": "module",
@@ -39,13 +39,12 @@
 	"author": "Ray Thurne",
 	"license": "ISC",
 	"dependencies": {
-		"@raythurnevoid/ts-node-template": "file://../../",
-		"@raythurnevoid/node-colorful-log": "1.0.0-beta"
+		"@raythurnevoid/node-colorful-log": "1.0.0-beta",
+		"@raythurnevoid/ts-node-template": "file://../../"
 	},
 	"devDependencies": {
-		"@types/node": "^17.0.23",
-		"browserslist": "^4.20.2",
-		"nodemon": "^2.0.15",
-		"jest": "^27.5.1"
+		"@types/node": "^18.7.6",
+		"browserslist": "^4.21.3",
+		"nodemon": "^2.0.19"
 	}
 }
