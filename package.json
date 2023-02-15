@@ -1,33 +1,17 @@
 {
 	"name": "@raythurnevoid/ts-node-template",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "Template for TS Node projects",
 	"scripts": {
-		"env": "cross-env TS_NODE_PROJECT=\"tsconfig.json\"",
-		"clean-lib": "del-cli lib/*",
-		"copy:package": "copyfiles package.json lib",
-		"copy:package:cjs": "copyfiles --up 1 cjs/* lib/cjs",
-		"copy": "copyfiles src/**/*.* tsconfig.json tsconfig.lib.json lib --exclude **/*.test.ts",
-		"copy:cjs": "copyfiles tsconfig.lib.cjs.json lib",
-		"tsc": "tsc -p tsconfig.lib.json",
-		"tsc:cjs": "tsc -p tsconfig.lib.cjs.json",
-		"build-lib": "npm-run-all --parallel copy:package copy:package:cjs copy copy:cjs copy tsc tsc:cjs",
-		"lib": "npm run clean-lib && npm run build-lib",
-		"dev": "npm run clean-lib && nodemon --watch src -e * --exec \"npm run build-lib && node \" ./lib/index.js",
-		"ts-node": "npm run env -- node -r ts-node/register -r tsconfig-paths/register --loader ts-node/esm --",
-		"ts-node:inspect": "npm run ts-node -- --inspect --",
-		"start": "npm run ts-node src/index.ts",
-		"debug": "npm run ts-node:inspect src/index.ts",
-		"package": "npm run lib && npm publish ./lib --access public --"
+		"dev": "vite-node --script --watch ./src/index.ts",
+		"dev:inspect": "node --inspect-brk ./node_modules/vite-node/vite-node.mjs --script --watch ./src/index.ts",
+		"build": "vite build",
+		"preview": "node ./dist/index.js",
+		"lib": "npm run build && npm run lib:copy",
+		"lib:copy": "copyfiles ./tsconfig.json ./package.json dist",
+		"package": "npm run lib && npm publish ./dist --access public --"
 	},
 	"type": "module",
-	"exports": {
-		".": "./src/index.ts"
-	},
-	"imports": {},
-	"browserslist": [
-		"> 5% or node >= 16"
-	],
 	"publishConfig": {
 		"access": "public"
 	},
@@ -40,19 +24,12 @@
 	"workspaces": [
 		"packages/*"
 	],
-	"dependencies": {
-		"copyfiles": "^2.4.1",
-		"cross-env": "^7.0.3",
-		"del-cli": "^5.0.0",
-		"dotenv": "^16.0.1",
-		"npm-run-all": "^4.1.5",
-		"ts-node": "^10.9.1",
-		"tsconfig-paths": "^4.1.0",
-		"typescript": "4.7.4"
-	},
 	"devDependencies": {
-		"@types/node": "^18.7.6",
-		"browserslist": "^4.21.3",
-		"nodemon": "^2.0.19"
+		"typescript": "4.9.5",
+		"vite-node": "^0.28.5",
+		"copyfiles": "^2.4.1",
+		"@types/node": "^18.13.0",
+		"vite": "^4.1.1",
+		"vite-plugin-dts": "^1.7.3"
 	}
 }

@@ -1,8 +1,5 @@
-import {
-	buildLogger,
-	defaultConfig,
-} from "@raythurnevoid/node-colorful-log/node";
-import type { Config } from "@raythurnevoid/node-colorful-log/types";
+import { buildLogger, defaultConfig } from "@raythurnevoid/rt0-logger/node";
+import type { Config } from "@raythurnevoid/rt0-logger/types";
 
 const config: Config = {
 	...defaultConfig,

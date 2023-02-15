@@ -58,7 +58,6 @@
 	"extensions": {
 		"recommendations": [
 			"esbenp.prettier-vscode",
-			"CoenraadS.bracket-pair-colorizer-2",
 			"aaron-bond.better-comments",
 			"wmaurer.change-case",
 			"mikestead.dotenv",

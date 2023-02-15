@@ -1,7 +1,7 @@
 import { resolve } from "path";
 import { Log } from "./log.js";
 import { config } from "dotenv";
-import type { Config } from "@raythurnevoid/node-colorful-log/types";
+import type { Config } from "@raythurnevoid/rt0-logger/types";
 
 const log = new Log("env.js");
 let read: boolean = false;
