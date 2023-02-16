@@ -8,8 +8,8 @@
 		"build": "vite build",
 		"preview": "node ./dist/index.js",
 		"lib": "npm run build && npm run lib:copy",
-		"lib:copy": "copyfiles ./tsconfig.json ./package.json dist",
-		"package": "npm run lib && npm publish ./dist --access public --"
+		"lib:copy": "copyfiles ./package.json dist",
+		"package": "npm run lib && npm publish ./dist"
 	},
 	"type": "module",
 	"publishConfig": {
